@@ -1,38 +1,117 @@
-.App {
+.App{
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-selection{
   display: flex;
-  flex-direction: column;
+ justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.movie-poster{
+  width: 40vh;
+  border-radius: 10px;
+  
+}
+.movie{
+  cursor: pointer;
+}
+
+.movie-details{
+  display: flex;
   align-items: center;
+  margin-bottom: 2rem;
+}
+
+.movie-title{
+  font-size: 1.5rem;
+  margin-bottom: 0.3rem;
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.screen-selection{
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.screen-selection .screen{
+  margin: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.2s;
+  padding: 4px;
+}
+
+.screen-selection .screen:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.screen-selection .screen:not(.available){
+  background-color: rgb(209, 26, 26);
+  color: black;
+  cursor: not-allowed;   
+}
+
+.screen-selection .screen-number{
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.screen-selection .screen-time{
+  font-size: 1.2rem;
+  color: #aaa;
+  margin-bottom: 1rem;
+}
+
+.screen-selection .screen-seats{
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+.screen-selection .screen-seats .seat{
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border-radius: 1px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.screen-selection .screen-seats .seat.selected{
+  background-color: #000000;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.screen-selection .screen-seats .seat:not(.available){
+  background-color: #ccc;
+  color: #444;
+  cursor: not-allowed;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.payment-method{
+  color:black;
+  background-color: darkturquoise;
+  margin-top: 1rem;
+  padding: 8px;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;}
+
+.payment-method:hover{
+  transform: scale(1.05);
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+}
+
+.payment-method:disabled{
+  cursor: not-allowed;
+  background-color: transparent;
+  color: black;
+  border: 1px solid black;
 }
